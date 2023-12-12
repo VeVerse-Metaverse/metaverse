@@ -1,0 +1,37 @@
+variables:
+  GIT_STRATEGY: none # Do not fetch or checkout in every stage, instead do it only during prepare state
+  GIT_CHECKOUT: "false"
+  CI_DEBUG_TRACE: "false" # Enable debug logging/tracing
+  UE_ROOT: X:\UEV\UnrealEngine # Unreal Engine root directory
+  PROJECT_NAME: Metaverse # Project name
+  SOURCE_ROOT_DIR: $UE_ROOT\$PROJECT_NAME
+  AUTOMATION_TOOL_NAME: veverse-automation-tool.exe
+  AUTOMATION_TOOL_PATH: $UE_ROOT\$PROJECT_NAME\Binaries\Deployment\$AUTOMATION_TOOL_NAME
+  VAT_PROJECT_DIR: $SOURCE_ROOT_DIR
+  VAT_PROJECT_NAME: $PROJECT_NAME
+
+stages:
+  - "Release"
+#  - "Prepare"
+#  - "Build Server"
+#  - "Deploy Server"
+#  - "Build Client"
+#  - "Deploy Client"
+#  - "Build SDK"
+#  - "Deploy SDK"
+#  - "Clean"
+
+Release:
+  stage: "Release"
+  tags:
+    - windows, unreal
+  script:
+    - echo "Release"
+    - echo $AUTOMATION_TOOL_PATH
+    - powershell.exe $AUTOMATION_TOOL_PATH release # Issue new Release jobs for each WL application
+  variables:
+    VAT_API2_URL: "https://test.api2.veverse.com/v2"
+  only:
+    - development
+    - tags
+  when: manual

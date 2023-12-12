@@ -1,0 +1,9 @@
+[submodule "VaRest"]
+	path = Plugins/VaRest
+	url = git@github.com:ufna/VaRest.git
+[submodule "Plugins/glTFRuntime"]
+	path = Plugins/glTFRuntime
+	url = git@github.com:rdeioris/glTFRuntime.git
+[submodule "Plugins/RuntimeAudioImporter"]
+	path = Plugins/RuntimeAudioImporter
+	url = git@github.com:gtreshchev/RuntimeAudioImporter.git

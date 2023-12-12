@@ -1,0 +1,37 @@
+﻿{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "Metaverse - Sentry",
+	"Hidden": false,
+	"Description": "Sentry error tracking integration module",
+	"Category": "Metaverse",
+	"CreatedBy": "Egor A. Pristavka",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"SupportURL": "",
+	"EnabledByDefault": true,
+	"Installed": true,
+	"SupportedTargetPlatforms": [
+		"Win64",
+		"Mac",
+		"Linux",
+		"Android",
+		"IOS"
+	],
+	"Modules": [
+		{
+			"Name": "VeSentry",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"PlatformAllowList": [
+				"Win64",
+				"Mac",
+				"Linux",
+				"Android",
+				"IOS"
+			]
+		}
+	],
+	"Plugins": []
+}
